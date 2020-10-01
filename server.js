@@ -114,9 +114,9 @@ app.put('/image', (req, res)=>{image.handleImage(req, res, db)})
 // 		res.status(404).json("not found");
 // }
 // })
+app.post('imageurl', (req,res)=> { image.handleApiCall(req,res)})
 
 
-
-app.listen (3001,()=>{
-	console.log("app is running on port 3001");
+app.listen (process.env.PORT || 3000, ()=>{
+	console.log(`app is running on port ${process.env.PORT}`);
 })
